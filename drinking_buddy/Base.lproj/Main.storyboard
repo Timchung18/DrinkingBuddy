@@ -10,7 +10,7 @@
         <!--Login View Controller-->
         <scene sceneID="mdC-uR-YyW">
             <objects>
-                <viewController title="Login View Controller" id="0Bh-h1-34o" customClass="LoginViewController" customModule="productName" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Login View Controller" id="0Bh-h1-34o" customClass="LoginViewController" customModule="drinking_buddy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iU1-2V-uVp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -89,7 +89,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostTableViewCell" rowHeight="248" id="4sW-l1-dNZ" customClass="PostTableViewCell" customModule="productName" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostTableViewCell" rowHeight="248" id="4sW-l1-dNZ" customClass="PostTableViewCell" customModule="drinking_buddy" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="248"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4sW-l1-dNZ" id="62d-1z-lEU">
@@ -159,14 +159,19 @@
         <!--Posting View Controller-->
         <scene sceneID="mIA-FJ-2Iz">
             <objects>
-                <viewController title="Posting View Controller" id="7oo-GZ-epw" customClass="PostingViewController" customModule="productName" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Posting View Controller" id="7oo-GZ-epw" customClass="PostingViewController" customModule="drinking_buddy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nws-Fb-6aN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0vX-hJ-DSK">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0vX-hJ-DSK">
                                 <rect key="frame" x="87" y="151" width="240" height="299"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="WCh-De-JjO" appends="YES" id="etP-NY-qFy"/>
+                                </connections>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Order:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vRv-S2-Qqd">
                                 <rect key="frame" x="87" y="507" width="56" height="24"/>
@@ -221,6 +226,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rns-si-cfG">
+                                <rect key="frame" x="182" y="788" width="51" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Post"/>
+                                <connections>
+                                    <action selector="onPostButton:" destination="7oo-GZ-epw" eventType="touchUpInside" id="AuO-pv-NFf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="wZx-qJ-ZAX"/>
@@ -232,13 +245,18 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l2c-Ih-Vuf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="WCh-De-JjO">
+                    <connections>
+                        <action selector="onPhotoButton:" destination="7oo-GZ-epw" id="NgI-ow-A8N"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="524.63768115942037" y="1279.6875"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="D61-R4-4yJ">
             <objects>
-                <viewController title="Profile View Controller" id="6nb-Be-jmI" customClass="ProfileViewController" customModule="productName" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Profile View Controller" id="6nb-Be-jmI" customClass="ProfileViewController" customModule="drinking_buddy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ooI-yi-U4A">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
