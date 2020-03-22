@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Parse
 class PostsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
@@ -32,6 +32,16 @@ class PostsTableViewController: UITableViewController {
         return 0
     }
 
+    @IBAction func onLogoutButton(_ sender: Any) {
+        PFUser.logOut()
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        let loginViewController = main.instantiateViewController(identifier: "LoginViewController")
+        let sceneDelegate = self.view.window?.windowScene?.delegate as! SceneDelegate
+        sceneDelegate.window?.rootViewController = loginViewController
+    }
+    
+    
+    // //////
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)

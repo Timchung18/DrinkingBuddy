@@ -145,6 +145,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="oC0-ti-kqG">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="GI9-Jq-R1g">
+                            <connections>
+                                <action selector="onLogoutButton:" destination="RVd-qY-io0" id="IJm-dS-dQA"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Add Post" id="pDS-9G-N3t">
                             <connections>
                                 <segue destination="7oo-GZ-epw" kind="presentation" modalPresentationStyle="fullScreen" id="QbY-oc-56w"/>
@@ -153,6 +158,7 @@
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="naY-EM-ksE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="RVd-qY-io0" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="524.63768115942037" y="533.70535714285711"/>
         </scene>
@@ -239,6 +245,8 @@
                         <viewLayoutGuide key="safeArea" id="wZx-qJ-ZAX"/>
                     </view>
                     <connections>
+                        <outlet property="costField" destination="ACN-Pu-w7C" id="Wgq-ib-NHb"/>
+                        <outlet property="dateLabel" destination="XH9-iF-Vu0" id="YK1-tJ-kkj"/>
                         <outlet property="orderField" destination="FxF-yI-wyu" id="Ia5-l8-tfi"/>
                         <outlet property="photoView" destination="0vX-hJ-DSK" id="icU-Zs-EKa"/>
                         <outlet property="placeField" destination="RbQ-Wf-ezX" id="qUm-Z5-qdz"/>
