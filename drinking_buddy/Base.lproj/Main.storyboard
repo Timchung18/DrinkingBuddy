@@ -10,7 +10,7 @@
         <!--Login View Controller-->
         <scene sceneID="mdC-uR-YyW">
             <objects>
-                <viewController title="Login View Controller" id="0Bh-h1-34o" customClass="LoginViewController" customModule="drinking_buddy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" title="Login View Controller" id="0Bh-h1-34o" customClass="LoginViewController" customModule="drinking_buddy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iU1-2V-uVp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -80,10 +80,10 @@
             </objects>
             <point key="canvasLocation" x="-465.21739130434787" y="-1028.5714285714284"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Posts Table View Controller-->
         <scene sceneID="q3F-PY-qkb">
             <objects>
-                <tableViewController id="aRq-Yf-BDs" sceneMemberID="viewController">
+                <tableViewController id="aRq-Yf-BDs" customClass="PostsTableViewController" customModule="drinking_buddy" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="HP7-Gl-c2e">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -107,7 +107,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Order" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TR0-i5-moQ">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Order" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TR0-i5-moQ" userLabel="Order Label">
                                             <rect key="frame" x="185" y="52" width="45" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -131,11 +131,11 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="costLabel" destination="3yo-dF-fTM" id="OIQ-4g-wbV"/>
-                                    <outlet property="dateLabel" destination="53l-Li-EtV" id="VVi-wc-8FJ"/>
-                                    <outlet property="drinkImage" destination="2Ek-vt-wgU" id="Jx0-zG-DaE"/>
-                                    <outlet property="orderLabel" destination="TR0-i5-moQ" id="ZcI-ji-IoG"/>
-                                    <outlet property="placeLabel" destination="zXW-1p-Ci0" id="jkv-gH-zH0"/>
+                                    <outlet property="costLabel" destination="3yo-dF-fTM" id="E7G-kw-HTy"/>
+                                    <outlet property="dateLabel" destination="53l-Li-EtV" id="Jyb-Ug-AOg"/>
+                                    <outlet property="drinkImageView" destination="2Ek-vt-wgU" id="DeU-3D-YTc"/>
+                                    <outlet property="orderLabel" destination="TR0-i5-moQ" id="LlD-rV-uwB"/>
+                                    <outlet property="placeLabel" destination="zXW-1p-Ci0" id="Kmm-Tw-mzW"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -147,7 +147,7 @@
                     <navigationItem key="navigationItem" id="oC0-ti-kqG">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="GI9-Jq-R1g">
                             <connections>
-                                <action selector="onLogoutButton:" destination="RVd-qY-io0" id="IJm-dS-dQA"/>
+                                <action selector="onLogoutButton:" destination="aRq-Yf-BDs" id="qkz-0r-1hY"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Add Post" id="pDS-9G-N3t">
@@ -156,9 +156,11 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="HP7-Gl-c2e" id="SZB-o6-Ubo"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="naY-EM-ksE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="RVd-qY-io0" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="524.63768115942037" y="533.70535714285711"/>
         </scene>
