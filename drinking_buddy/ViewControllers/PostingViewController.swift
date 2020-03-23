@@ -49,6 +49,9 @@ class PostingViewController: UIViewController,UIImagePickerControllerDelegate, U
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func onCancelButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     @IBAction func onPostButton(_ sender: Any) {
         let post = PFObject(className: "Posts")
         post["order"] = orderField.text!
