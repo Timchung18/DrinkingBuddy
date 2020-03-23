@@ -7,11 +7,27 @@
 //
 
 import UIKit
-
+import Parse
 class ProfileViewController: UIViewController {
 
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var countLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        let user = PFUser.current()
+        var postslist = [PFObject]()
+        usernameLabel.text = user?.username
+        let query = PFQuery(className: "Posts")
+        query.includeKey("author")
+        query.limit = 20
+        query.findObjectsInBackground { (posts, error) in
+            if posts != nil {
+                postslist = posts!
+            }
+        }
+        var str = String(postslist.count)
+        var str1 = "You have had " + str + "drink(s)"
+        countLabel.text = str1
 
         // Do any additional setup after loading the view.
     }

@@ -26,17 +26,8 @@ class PostsTableViewController: UIViewController, UITableViewDelegate, UITableVi
         query.limit = 20
         query.findObjectsInBackground { (posts, error) in
             if posts != nil {
-//                var temp = [PFObject]()
-//                temp = posts!
-//                for i in temp{
-//                    let user = i["author"] as! PFUser
-//                    if (user == PFUser.current()) {
-//                        self.posts.append(i)
-//                    }
-//                }
                 self.posts = posts!
                 self.tableView.reloadData()
-                print("reload data")
             }
         }
     }
