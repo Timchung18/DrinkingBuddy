@@ -22,22 +22,28 @@ class PostsTableViewController: UIViewController, UITableViewDelegate, UITableVi
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         let query = PFQuery(className:"Posts")
-        query.includeKeys(["author", "order", "place", "cost", "date"])
+        query.includeKey("author")
         query.limit = 20
         query.findObjectsInBackground { (posts, error) in
             if posts != nil {
+//                var temp = [PFObject]()
+//                temp = posts!
+//                for i in temp{
+//                    let user = i["author"] as! PFUser
+//                    if (user == PFUser.current()) {
+//                        self.posts.append(i)
+//                    }
+//                }
                 self.posts = posts!
                 self.tableView.reloadData()
+                print("reload data")
             }
         }
     }
 
     // MARK: - Table view data source
 
-    func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return posts.count
-    }
+    
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
